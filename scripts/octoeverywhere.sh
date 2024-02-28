@@ -167,7 +167,7 @@ function clone_octoeverywhere() {
   [[ -d "${OCTOEVERYWHERE_DIR}" ]] && rm -rf "${OCTOEVERYWHERE_DIR}"
 
   cd "${HOME}" || exit 1
-  if ! git clone "${repo}" "${OCTOEVERYWHERE_DIR}"; then
+  if ! git clone --depth=1 "${repo}" "${OCTOEVERYWHERE_DIR}"; then
     print_error "Cloning OctoEverywhere from\n ${repo}\n failed!"
     exit 1
   fi
@@ -300,7 +300,7 @@ function clone_octoeverywhere() {
   [[ -d ${OCTOEVERYWHERE_DIR} ]] && rm -rf "${OCTOEVERYWHERE_DIR}"
 
   cd "${HOME}" || exit 1
-  if ! git clone "${OCTOEVERYWHERE_REPO}" "${OCTOEVERYWHERE_DIR}"; then
+  if ! git clone --depth=1 "${OCTOEVERYWHERE_REPO}" "${OCTOEVERYWHERE_DIR}"; then
     print_error "Cloning OctoEverywhere from\n ${repo}\n failed!"
     exit 1
   fi

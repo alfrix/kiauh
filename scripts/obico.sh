@@ -298,7 +298,7 @@ function clone_moonraker_obico() {
   [[ -d "${MOONRAKER_OBICO_DIR}" ]] && rm -rf "${MOONRAKER_OBICO_DIR}"
 
   cd "${HOME}" || exit 1
-  if ! git clone "${repo}" "${MOONRAKER_OBICO_DIR}"; then
+  if ! git clone --depth=1 "${repo}" "${MOONRAKER_OBICO_DIR}"; then
     print_error "Cloning Obico from\n ${repo}\n failed!"
     exit 1
   fi

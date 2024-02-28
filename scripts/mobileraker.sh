@@ -56,7 +56,7 @@ function mobileraker_setup() {
 
   # clone into fresh Mobileraker's companion dir
   cd "${HOME}" || exit 1
-  if ! git clone "${MOBILERAKER_REPO}" "${MOBILERAKER_DIR}"; then
+  if ! git clone --depth=1 "${MOBILERAKER_REPO}" "${MOBILERAKER_DIR}"; then
     print_error "Cloning mobileraker's companion from\n ${MOBILERAKER_REPO}\n failed!"
     exit 1
   fi

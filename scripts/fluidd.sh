@@ -124,7 +124,7 @@ function download_fluidd_macros() {
 
   status_msg "Cloning fluidd-config ..."
   [[ -d "${HOME}/fluidd-config" ]] && rm -rf "${HOME}/fluidd-config"
-  if git clone --recurse-submodules "${ms_cfg_repo}" "${HOME}/fluidd-config"; then
+  if git clone --depth=1 --recurse-submodules "${ms_cfg_repo}" "${HOME}/fluidd-config"; then
     for config in ${configs}; do
       path=$(echo "${config}" | rev | cut -d"/" -f2- | rev)
 
